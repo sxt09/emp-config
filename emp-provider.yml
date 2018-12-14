@@ -5,7 +5,7 @@ spring:
 server:
   port: 8090 #端口
 spring:
-   profiles: dev
+   profile: dev
    application:
      name: emp-provider
    datasource:
@@ -43,7 +43,7 @@ info:
 server:
   port: 8090 #端口
 spring:
-   profiles: test
+   profile: test
    application:
      name: emp-provider
    datasource:
