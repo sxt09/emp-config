@@ -4,7 +4,6 @@ spring:
 ---
 server:
   port: 8090 #端口
-
 spring:
    profiles: dev
    application:
@@ -38,12 +37,11 @@ info:
   name: www.sxt.cn
  build:
   artifactId: $project.artifactId$
-  version: project.version$
+  version: $project.version$
 ---
 ---
 server:
   port: 8090 #端口
-
 spring:
    profiles: test
    application:
@@ -77,5 +75,5 @@ info:
   name: www.sxt.cn
  build:
   artifactId: $project.artifactId$
-  version: project.version$
+  version: $project.version$
             
