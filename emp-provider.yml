@@ -1,0 +1,80 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 8090 #端口
+
+spring:
+   profiles: dev
+   application:
+     name: emp-provider
+   datasource:
+       driver-class-name: com.mysql.jdbc.Driver      # mysql驱动包
+       url: jdbc:mysql://localhost:3306/springcloud   # 数据库名称
+       username: root
+       password: 1111
+       type: com.alibaba.druid.pool.DruidDataSource   # 当前数据源操作类型
+   jpa:
+       hibernate:
+          ddl-auto: update
+       show-sql: true
+   cache:
+    ehcache:
+      config: classpath:ehcache.xml
+eureka:
+   client: #客户端注册进eureka服务列表内
+      service-url:
+         defaultZone: http://127.0.0.1:8092/eureka/
+   instance:
+      instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+      prefer-ip-address: true    
+
+#info页面展现配置      
+info:
+ app:
+  name: emp-provider-8090
+ company:
+  name: www.sxt.cn
+ build:
+  artifactId: $project.artifactId$
+  version: project.version$
+---
+server:
+  port: 8090 #端口
+
+spring:
+   profiles: test
+   application:
+     name: emp-provider
+   datasource:
+       driver-class-name: com.mysql.jdbc.Driver      # mysql驱动包
+       url: jdbc:mysql://localhost:3306/springcloud   # 数据库名称
+       username: root
+       password: 1111
+       type: com.alibaba.druid.pool.DruidDataSource   # 当前数据源操作类型
+   jpa:
+       hibernate:
+          ddl-auto: update
+       show-sql: true
+   cache:
+    ehcache:
+      config: classpath:ehcache.xml
+eureka:
+   client: #客户端注册进eureka服务列表内
+      service-url:
+         defaultZone: http://127.0.0.1:8092/eureka/
+   instance:
+      instance-id: ${spring.cloud.client.ipAddress}:${spring.application.name}:${spring.application.instance_id:${server.port}}
+      prefer-ip-address: true    
+
+#info页面展现配置      
+info:
+ app:
+  name: emp-provider-8090
+ company:
+  name: www.sxt.cn
+ build:
+  artifactId: $project.artifactId$
+  version: project.version$
+            
