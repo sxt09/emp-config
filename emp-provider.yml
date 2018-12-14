@@ -40,6 +40,7 @@ info:
   artifactId: $project.artifactId$
   version: project.version$
 ---
+---
 server:
   port: 8090 #端口
 
