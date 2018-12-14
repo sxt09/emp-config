@@ -6,7 +6,7 @@ server:
   port: 8091 #端口
 
 spring:
-   profiles: dev
+   profile: dev
    application:
      name: emp-consumer     
 eureka:
@@ -36,7 +36,7 @@ server:
   port: 8091 #端口
 
 spring:
-   profiles: test
+   profile: test
    application:
      name: emp-consumer     
 eureka:
